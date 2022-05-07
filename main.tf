@@ -7,7 +7,7 @@ data "aws_secretsmanager_secret" "kms_cmk_arn" {
   arn = "kms_cmk_arn" # We look up the secret via ARN, and find the KMS CMK's ARN, referenced below
 }
 
-module "Ue1TiGitHubBuilders" {
+module "EcsCluster" {
   source        = "./modules/ecs_on_fargate"
   ecs_name      = "ResourceGroupName" # Name to use for customizing resources, permits deploying this module multiple times with different names
   image_ecr_url = "url_of_ECR" # URL of the container repo where image is stored
